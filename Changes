@@ -1,5 +1,8 @@
 Revision history for Hyper-Developer
 
+0.04   Wed Feb 16 03:20:00 2007
+       * fixed typo in webserver template
+
 0.03   Wed Feb 16 02:55:00 2007
        * fixed tests
        * updated/fixed pod

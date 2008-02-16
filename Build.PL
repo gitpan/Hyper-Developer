@@ -2,7 +2,7 @@ use Module::Build;
 my $build = Module::Build->new(
     dist_abstract      => 'Hyper Developer Tools',
     dist_name          => 'Hyper-Developer',
-    dist_version       => '0.03',
+    dist_version       => '0.04',
     dist_author        => 'Andreas Specht <acid@cpan.org>',
     module_name        => 'Hyper-Developer',
     license            => 'artistic',

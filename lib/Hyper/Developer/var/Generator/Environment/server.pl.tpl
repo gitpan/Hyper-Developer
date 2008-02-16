@@ -6,12 +6,11 @@ use warnings;
 use lib qw([% this.get_base_path %]/lib);
 
 use Hyper::Developer::Server;
-use Hyper::Singleton::Context;
-Hyper::Singleton::Context->new({
-    file => '[% this.get_base_path %]/etc/[% this.get_namespace %]/Context.ini',
-});
-
-Hyper::Developer::Server->new()->run();
+Hyper::Developer::Server->new({
+    'Hyper::Developer::Server' => {
+        config_file => '[% this.get_base_path %]/etc/[% this.get_namespace %]/Context.ini',
+    },
+})->run();
 
 __END__
 [%# work around for CPAN's indexer, which gets disturbed by pod in templates -%]

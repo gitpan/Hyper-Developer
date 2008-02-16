@@ -43,8 +43,8 @@ WriteMakefile
                          },
           'INSTALLDIRS' => 'site',
           'EXE_FILES' => [
-                           '/home/andreas/svn/Hyper/Hyper-Developer/branches/0.03/bin/hyper.pl',
-                           '/home/andreas/svn/Hyper/Hyper-Developer/branches/0.03/bin/model_check.pl'
+                           '/home/andreas/svn/Hyper/Hyper-Developer/branches/0.04/bin/hyper.pl',
+                           '/home/andreas/svn/Hyper/Hyper-Developer/branches/0.04/bin/model_check.pl'
                          ],
           'PL_FILES' => {}
         )

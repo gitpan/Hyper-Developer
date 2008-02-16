@@ -23,9 +23,7 @@ lib/Hyper/Developer/var/Generator/Environment/Context.ini.tpl
 lib/Hyper/Developer/var/Generator/Environment/index.pl.tpl
 lib/Hyper/Developer/var/Generator/Environment/server.pl.tpl
 lib/Hyper/Developer/var/Hyper/Developer/Server.htc
-Makefile.PL
 MANIFEST			This list of files
-META.yml
 README
 t/01_use.t
 t/02_test_class.t
@@ -38,3 +36,5 @@ t/98_pod.t
 t/99_pod_coverage.t
 t/lib/Test/Class/Hyper/Developer.pm
 t/lib/Test/Hyper/Developer/Generator/Control/Flow.pm
+Makefile.PL
+META.yml
