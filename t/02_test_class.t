@@ -6,19 +6,22 @@ use warnings;
 use File::Basename;
 use File::Spec;
 
-
 BEGIN {
     require lib;
-    lib->import( grep { -d $_ }
-        map { File::Spec->rel2abs(dirname(__FILE__) . "/$_"); }
-            qw(lib ../lib ../blib/lib)
+    lib ->import(
+        map {
+            my $path = dirname(__FILE__) . "/$_";
+            -d $path ? $path : ();
+        } qw(../lib/ lib)
     );
 }
 our %PATH_OF = (
     t    => dirname(__FILE__),
-    libs => [ grep { -d $_ }
-        map { File::Spec->rel2abs(dirname(__FILE__) . "/$_"); }
-            qw(lib ../lib ../blib/lib)
+    libs => [
+        map {
+            my $path = dirname(__FILE__) . "/$_";
+            -d $path ? $path : ();
+        } qw(../lib/ lib)
     ],
 );
 

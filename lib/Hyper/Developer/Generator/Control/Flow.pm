@@ -157,23 +157,23 @@ Hyper::Config::Reader::Flow
 
 =item Last changed by
 
-$Author: $
+$Author: ac0v $
 
 =item Id
 
-$Id: $
+$Id: Flow.pm 320 2008-02-16 02:04:51Z ac0v $
 
 =item Revision
 
-$Revision: $
+$Revision: 320 $
 
 =item Date
 
-$Date: $
+$Date: 2008-02-16 03:04:51 +0100 (Sat, 16 Feb 2008) $
 
 =item HeadURL
 
-$HeadURL: $
+$HeadURL: http://svn.hyper-framework.org/Hyper/Hyper-Developer/trunk/lib/Hyper/Developer/Generator/Control/Flow.pm $
 
 =back
 

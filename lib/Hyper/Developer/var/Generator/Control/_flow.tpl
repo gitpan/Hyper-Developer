@@ -42,8 +42,8 @@ sub _get_destination_of_[% step.key %] :RESTRICTED {
 1;
 
 __END__
-
-=pod
+[%# work around for CPAN's indexer, which gets disturbed by pod in templates -%]
+[% pod = BLOCK %]=pod[% END -%]
 
 =head1 NAME
 

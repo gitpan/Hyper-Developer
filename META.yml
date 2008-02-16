@@ -1,6 +1,6 @@
 ---
 name: Hyper-Developer
-version: 0.02
+version: 0.03
 author:
   - 'Andreas Specht <acid@cpan.org>'
 abstract: Hyper Developer Tools
@@ -23,7 +23,7 @@ requires:
   Graph::Easy::As_svg: 0
   HTTP::Server::Simple::CGI: 0
   HTTP::Server::Simple::Static: 0
-  Hyper: 0.02
+  Hyper: 0.03
   Hyper::Config::Reader::Container: 0
   Hyper::Config::Reader::Flow: 0
   Hyper::Control::Container: 0
@@ -31,12 +31,14 @@ requires:
   Hyper::Error: 0
   Hyper::Functions: 0
   Hyper::Singleton::Context: 0
+  IO::Scalar: 0
   Parse::RecDescent: 0
   Pod::Usage: 0
   Template: 0
   Time::HiRes: 0
   version: 0
 build_requires:
+  IO::Scalar: 0
   Test::Class: 0
   Test::Exception: 0
   Test::More: 0
@@ -46,28 +48,28 @@ build_requires:
 provides:
   Hyper::Developer::Generator:
     file: lib/Hyper/Developer/Generator.pm
-    version: v0.1.0
+    version: v0.01
   Hyper::Developer::Generator::Control:
     file: lib/Hyper/Developer/Generator/Control.pm
-    version: v0.1.0
+    version: v0.01
   Hyper::Developer::Generator::Control::Container:
     file: lib/Hyper/Developer/Generator/Control/Container.pm
-    version: v0.1.0
+    version: v0.01
   Hyper::Developer::Generator::Control::ContainerFlow:
     file: lib/Hyper/Developer/Generator/Control/ContainerFlow.pm
-    version: v0.1.0
+    version: v0.01
   Hyper::Developer::Generator::Control::Flow:
     file: lib/Hyper/Developer/Generator/Control/Flow.pm
-    version: v0.1.0
+    version: v0.01
   Hyper::Developer::Generator::Environment:
     file: lib/Hyper/Developer/Generator/Environment.pm
-    version: v0.1.0
+    version: v0.01
   Hyper::Developer::Model::Viewer:
     file: lib/Hyper/Developer/Model/Viewer.pm
-    version: v0.1.0
+    version: v0.1
   Hyper::Developer::Server:
     file: lib/Hyper/Developer/Server.pm
-generated_by: Module::Build version 0.2806
+generated_by: Module::Build version 0.2808
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html
   version: 1.2

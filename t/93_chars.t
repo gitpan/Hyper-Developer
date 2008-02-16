@@ -4,9 +4,10 @@ use strict;
 use warnings;
 
 use File::Find;
+use File::Basename;
 use Test::More;
 
-
+my $lib_path = dirname(__FILE__) . '/../lib';
 my %LIST;
 find(
     sub {
@@ -16,13 +17,13 @@ find(
                 $LIST{"../$1"} = 1;
             }
     },
-    ('../lib'),
+    $lib_path,
 );
 
 plan ( tests => (scalar keys %LIST) );
 
 for my $module (sort keys %LIST) {
-    open( my $file, '<', $module ) or die "cannnot open file $module";
+    open( my $file, '<', "$lib_path/$module" ) or die "cannnot open file $module";
     local $/;
     my $text = <$file>;
 

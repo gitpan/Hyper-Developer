@@ -48,8 +48,8 @@ sub ACTION_[% step.key %] {
 1;
 
 __END__
-
-=pod
+[%# work around for CPAN's indexer, which gets disturbed by pod in templates -%]
+[% pod = BLOCK %]=pod[% END -%]
 
 =head1 NAME
 

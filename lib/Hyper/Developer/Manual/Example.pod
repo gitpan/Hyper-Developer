@@ -6,7 +6,7 @@ Hyper::Developer::Manual::Example - Example Hyper Application
 
 =head1 VERSION
 
-This document describes Hyper::Developer::Manual::Example 0.02
+This document describes Hyper::Developer::Manual::Example 0.03
 
 =head1 DESCRIPTION
 
@@ -185,12 +185,20 @@ Create a file
 
 with the following content
 
+    [Control]
+    [Control submit]
+    class=Hyper.Control.Base.BPushButton
+
     [Step]
     [Step START]
     [Step START Show]
 
     [Step Show]
+    controls=<<EOT
+    submit
+    EOT
     [Step Show END]
+    condition=submit.pushed();
 
     [Step END]
 
@@ -244,6 +252,7 @@ with the following content
     confirmation
     EOT
     [Step confirm select]
+    condition=confirmation.state eq 'END'
 
     [Step END]
 
@@ -300,11 +309,11 @@ and add the following code before the __END__ mark
     sub ACTION_select {
         my $self = shift;
 
-        $self->get_object('select_username')->get_object('user')->add_element(
+        $self->get_object('select_username')->get_object('user')->set_elements([
             map {
                 { value => $_->username(), data => $_->username() };
             } $self->_get_authen_object()->all_users()
-        );
+        ]);
 
         return $self;
     }
@@ -353,23 +362,23 @@ Now you can edit the default templates *.htc located below
 
 =item Last changed by
 
- $Author: $
+ $Author: ac0v $
 
 =item Id
 
- $Id: $
+ $Id: Example.pod 320 2008-02-16 02:04:51Z ac0v $
 
 =item Revision
 
- $Revision: $
+ $Revision: 320 $
 
 =item Date
 
- $Date: $
+ $Date: 2008-02-16 03:04:51 +0100 (Sat, 16 Feb 2008) $
 
 =item HeadURL
 
- $HeadURL: $
+ $HeadURL: http://svn.hyper-framework.org/Hyper/Hyper-Developer/trunk/lib/Hyper/Developer/Manual/Example.pod $
 
 =back
 

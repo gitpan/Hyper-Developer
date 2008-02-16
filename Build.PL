@@ -2,7 +2,7 @@ use Module::Build;
 my $build = Module::Build->new(
     dist_abstract      => 'Hyper Developer Tools',
     dist_name          => 'Hyper-Developer',
-    dist_version       => '0.02',
+    dist_version       => '0.03',
     dist_author        => 'Andreas Specht <acid@cpan.org>',
     module_name        => 'Hyper-Developer',
     license            => 'artistic',
@@ -35,7 +35,8 @@ my $build = Module::Build->new(
         Hyper::Control::Flow             => 0,
         Graph::Easy                      => 0,
         Graph::Easy::As_svg              => 0,
-        Hyper                            => 0.02,
+        Hyper                            => 0.03,
+        IO::Scalar                       => 0,
     },
     build_requires => {
         Test::Prereq::Build => 0,
@@ -44,6 +45,7 @@ my $build = Module::Build->new(
         Test::Pod           => 1.00,
         Test::Pod::Coverage => 1.00,
         Test::Class         => 0,
+        IO::Scalar          => 0,
     },
     recursive_test_files => 1,
     meta_add => {

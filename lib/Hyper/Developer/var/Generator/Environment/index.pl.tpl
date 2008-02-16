@@ -15,8 +15,8 @@ Hyper::Singleton::Context->new({
 Hyper->new()->work();
 
 __END__
-
-=pod
+[%# work around for CPAN's indexer, which gets disturbed by pod in templates -%]
+[% pod = BLOCK %]=pod[% END -%]
 
 =head1 NAME
 

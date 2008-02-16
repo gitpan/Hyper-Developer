@@ -5,28 +5,59 @@ use warnings;
 
 use base qw(HTTP::Server::Simple::CGI HTTP::Server::Simple::Static);
 
+use File::Basename;
 use Hyper;
 use Hyper::Singleton::Context;
 use Hyper::Template::HTC;
 use Hyper::Developer::Model::Viewer;
+use Hyper::Request::Default;
+
+use Readonly;
+Readonly my $PACKAGE => __PACKAGE__;
 
 use CGI;
 use File::Find;
 use Hyper::Functions;
 
-sub handler {
-    my $self         = shift;
-    my $cgi          = CGI->new();
-    my $file         = $cgi->path_info();
-       $file         =~ s{//}{/}xmsg;
-    my $query_string = $cgi->query_string();
+sub new {
+    my $class   = shift;
+    my $arg_ref = shift;
+    my $config  = delete $arg_ref->{$PACKAGE};
+    my $self    = HTTP::Server::Simple::new($class, %{$arg_ref});
 
-    my $config    = Hyper::Singleton::Context->singleton()->get_config();
-    my $namespace = $config->get_namespace();
-    my $base_path = $config->get_base_path();
+    $self->{$PACKAGE} = {
+        base_path => dirname((caller)[1]) . '/../../',
+        %{$config}
+    };
+
+    return $self;
+}
+
+sub handler {
+    my $self = shift;
+    my $cgi  = CGI->new();
+
+    # use server's cgi as cgi singleton
+    { no warnings qw(redefine);
+      *Hyper::Singleton::CGI::new
+          = *Hyper::Singleton::CGI::singleton
+          = sub { return $cgi; };
+      *Hyper::Error::_is_eval_context = sub {
+          return $_[3] && $_[3] eq '(eval)';
+      };
+    }
 
     print "HTTP/1.0 200 OK\n";
-    if ( my $pid = fork() ) {
+    eval {
+        my $file         = $cgi->path_info();
+           $file         =~ s{//}{/}xmsg;
+        my $query_string = $cgi->query_string();
+        my $config       = Hyper::Singleton::Context->new({
+            file => $self->{$PACKAGE}->{config_file},
+        })->get_config();
+        my $namespace    = $config->get_namespace();
+        my $base_path    = $config->get_base_path();
+
         if ( ! $file || $file eq '/' ) {
             $self->_show_index();
         }
@@ -44,7 +75,8 @@ sub handler {
         else {
             $self->serve_static($cgi, "$base_path/htdocs/");
         }
-    }
+        Hyper::Request::Default::cleanup();
+    };
 
     return;
 }
@@ -52,7 +84,6 @@ sub handler {
 sub _model_viewer {
     my $self        = shift;
     my $arg_ref     = shift;
-    my $config_file = Hyper::Singleton::Context->singleton()->get_file();
     my $class       = "$arg_ref->{namespace}\::Control\::$arg_ref->{type}"
         . "\::$arg_ref->{service}\::"
         . ( substr $arg_ref->{type}, 0, 1 )
@@ -77,11 +108,10 @@ EOT
 }
 
 sub _show_index {
-    my $self        = shift;
-    my $config_file = Hyper::Singleton::Context->singleton()->get_file();
-    my $config      = Hyper::Singleton::Context->singleton()->get_config();
-    my $namespace   = $config->get_namespace();
-    my $base_path   = $config->get_base_path();
+    my $self      = shift;
+    my $config    = Hyper::Singleton::Context->singleton()->get_config();
+    my $namespace = $config->get_namespace();
+    my $base_path = $config->get_base_path();
 
     eval {
         # Child

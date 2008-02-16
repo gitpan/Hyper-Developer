@@ -7,20 +7,22 @@ use File::Find;
 
 BEGIN {
     require lib;
-    lib->import( grep { -d $_; } map { dirname(__FILE__) . "/$_"; }
-        qw(lib ../lib ../blib/lib)
-    );
+    my $lib_path = dirname(__FILE__) . '/../lib';
+    if ( -d $lib_path ) {
+        lib->import($lib_path);
+    }
 }
 our %PATH_OF = (
     t    => dirname(__FILE__),
-    libs => [ grep { -d $_; } map { dirname(__FILE__) . "/$_"; }
-        qw(lib ../lib ../blib/lib) ],
+    libs => [
+        dirname(__FILE__) . '/../lib',
+    ],
 );
 
 my %LIST;
 find(
     sub {
-        return if ! m{\.pm$}xms;
+        return if -d $_ || $_ !~ m{\.pm$}xms;
         open my $file, '<', $_ or die "can't open >$_<";
 
         my $is_pod = 0;
