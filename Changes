@@ -1,14 +1,17 @@
 Revision history for Hyper-Developer
 
-0.04   Wed Feb 16 03:20:00 2007
+0.05   Wed Feb 17 14:36:00 2008
        * fixed typo in webserver template
 
-0.03   Wed Feb 16 02:55:00 2007
+0.04   Wed Feb 16 03:20:00 2008
+       * fixed typo in webserver template
+
+0.03   Wed Feb 16 02:55:00 2008
        * fixed tests
        * updated/fixed pod
        * fixed Hyper::Developer::Server
 
-0.02   Wed Feb 20 01:30:00 2007
+0.02   Wed Feb 13 01:30:00 2008
        Initial CPAN release.
 
 0.01   Tue Nov  6 23:46:00 2007

@@ -3,11 +3,6 @@
 use strict;
 use warnings;
 
-use lib qw(
-    /home/andreas/svn/Hyper/Hyper/trunk/lib
-    /home/andreas/svn/Hyper/Hyper-Developer/trunk/lib
-);
-
 use Hyper::Error;
 use Getopt::Long;
 use Pod::Usage;

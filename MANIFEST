@@ -2,6 +2,7 @@ bin/hyper.pl
 bin/model_check.pl
 Build.PL
 Changes
+lib/Hyper/Developer.pm
 lib/Hyper/Developer/Generator.pm
 lib/Hyper/Developer/Generator/Control.pm
 lib/Hyper/Developer/Generator/Control/Container.pm

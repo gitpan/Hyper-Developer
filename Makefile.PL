@@ -2,8 +2,8 @@
 use ExtUtils::MakeMaker;
 WriteMakefile
 (
-          'NAME' => 'Hyper-Developer',
-          'VERSION_FROM' => 'lib/Hyper-Developer.pm',
+          'NAME' => 'Hyper::Developer',
+          'VERSION_FROM' => 'lib/Hyper/Developer.pm',
           'PREREQ_PM' => {
                            'Class::Std' => '0',
                            'Class::Std::Storable' => '0',
@@ -20,7 +20,7 @@ WriteMakefile
                            'Graph::Easy::As_svg' => '0',
                            'HTTP::Server::Simple::CGI' => '0',
                            'HTTP::Server::Simple::Static' => '0',
-                           'Hyper' => '0.03',
+                           'Hyper' => 'v0.03',
                            'Hyper::Config::Reader::Container' => '0',
                            'Hyper::Config::Reader::Flow' => '0',
                            'Hyper::Control::Container' => '0',
@@ -43,8 +43,8 @@ WriteMakefile
                          },
           'INSTALLDIRS' => 'site',
           'EXE_FILES' => [
-                           '/home/andreas/svn/Hyper/Hyper-Developer/branches/0.04/bin/hyper.pl',
-                           '/home/andreas/svn/Hyper/Hyper-Developer/branches/0.04/bin/model_check.pl'
+                           '/home/andreas/svn/Hyper/Hyper-Developer/branches/0.05/bin/hyper.pl',
+                           '/home/andreas/svn/Hyper/Hyper-Developer/branches/0.05/bin/model_check.pl'
                          ],
           'PL_FILES' => {}
         )
