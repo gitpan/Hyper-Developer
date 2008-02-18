@@ -2,12 +2,12 @@ use Module::Build;
 my $build = Module::Build->new(
     dist_abstract      => 'Hyper Developer Tools',
     dist_name          => 'Hyper-Developer',
-    dist_version       => '0.05',
+    dist_version       => '0.06',
     dist_author        => 'Andreas Specht <acid@cpan.org>',
     module_name        => 'Hyper::Developer',
     license            => 'artistic',
-    create_makefile_pl => 'traditional',
-    requires        => {
+    create_makefile_pl => 'passthrough',
+    requires           => {
         Class::Std::Storable             => 0,
         Class::Std                       => 0,
         Config::IniFiles                 => 0,

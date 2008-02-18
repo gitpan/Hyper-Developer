@@ -374,11 +374,11 @@ Now you can edit the default templates *.htc located below
 
 =item Date
 
- $Date: 2008-02-16 03:04:51 +0100 (Sat, 16 Feb 2008) $
+ $Date: 2008-02-16 03:04:51 +0100 (Sa, 16 Feb 2008) $
 
 =item HeadURL
 
- $HeadURL: http://svn.hyper-framework.org/Hyper/Hyper-Developer/trunk/lib/Hyper/Developer/Manual/Example.pod $
+ $HeadURL: http://svn.hyper-framework.org/Hyper/Hyper-Developer/branches/0.06/lib/Hyper/Developer/Manual/Example.pod $
 
 =back
 

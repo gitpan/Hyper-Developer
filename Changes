@@ -1,5 +1,8 @@
 Revision history for Hyper-Developer
 
+0.06   Wed Feb 18 14:10:00 2008
+       * fixed Makefile.PL
+
 0.05   Wed Feb 17 14:36:00 2008
        * fixed typo in webserver template
 

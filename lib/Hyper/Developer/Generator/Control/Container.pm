@@ -207,11 +207,11 @@ $Revision: 320 $
 
 =item Date
 
-$Date: 2008-02-16 03:04:51 +0100 (Sat, 16 Feb 2008) $
+$Date: 2008-02-16 03:04:51 +0100 (Sa, 16 Feb 2008) $
 
 =item HeadURL
 
-$HeadURL: http://svn.hyper-framework.org/Hyper/Hyper-Developer/trunk/lib/Hyper/Developer/Generator/Control/Container.pm $
+$HeadURL: http://svn.hyper-framework.org/Hyper/Hyper-Developer/branches/0.06/lib/Hyper/Developer/Generator/Control/Container.pm $
 
 =back
 
