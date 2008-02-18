@@ -1,6 +1,6 @@
 ---
 name: Hyper-Developer
-version: 0.06
+version: 0.07
 author:
   - 'Andreas Specht <acid@cpan.org>'
 abstract: Hyper Developer Tools
@@ -32,6 +32,7 @@ requires:
   Hyper::Functions: 0
   Hyper::Singleton::Context: 0
   IO::Scalar: 0
+  Module::Refresh: 0
   Parse::RecDescent: 0
   Pod::Usage: 0
   Template: 0
@@ -48,7 +49,7 @@ build_requires:
 provides:
   Hyper::Developer:
     file: lib/Hyper/Developer.pm
-    version: v0.06
+    version: v0.07
   Hyper::Developer::Generator:
     file: lib/Hyper/Developer/Generator.pm
     version: v0.01

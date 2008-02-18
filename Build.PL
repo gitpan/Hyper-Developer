@@ -2,7 +2,7 @@ use Module::Build;
 my $build = Module::Build->new(
     dist_abstract      => 'Hyper Developer Tools',
     dist_name          => 'Hyper-Developer',
-    dist_version       => '0.06',
+    dist_version       => '0.07',
     dist_author        => 'Andreas Specht <acid@cpan.org>',
     module_name        => 'Hyper::Developer',
     license            => 'artistic',
@@ -37,6 +37,7 @@ my $build = Module::Build->new(
         Graph::Easy::As_svg              => 0,
         Hyper                            => 'v0.03',
         IO::Scalar                       => 0,
+        Module::Refresh                  => 0,
     },
     build_requires => {
         Test::Prereq::Build => 0,

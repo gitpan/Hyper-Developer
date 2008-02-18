@@ -30,6 +30,12 @@ elsif ( $file ) {
     # split file in useable parts
     ($base_path, $namespace, $type, $service, $usecase)
         = $file =~ m{\A(.+?/)etc/([^/]+)/Control/([^/]+)/([^/]+)/(?: C|F)([^\.]+)\.ini\z}xms;
+
+    # tell the user some details
+    print "Error:\n     please check your file path layout\n"
+        if 5 != grep {
+               defined $_;
+           } $base_path, $namespace, $type, $service, $usecase;
 }
 
 if ( ! $type || ! $base_path || ! $namespace ) {

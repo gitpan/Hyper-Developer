@@ -2,7 +2,7 @@ package Hyper::Developer;
 
 use strict;
 use warnings;
-use version; our $VERSION = qv('0.06');
+use version; our $VERSION = qv('0.07');
 
 1;
 
@@ -16,11 +16,11 @@ Hyper::Developer - Hyper Developer Tools
 
 =head1 VERSION
 
-This document describes Hyper::Developer 0.06
+This document describes Hyper::Developer 0.07
 
 =head1 SYNOPSIS
 
-    use Hyper::Developer 0.06;
+    use Hyper::Developer 0.07;
 
 =head1 DESCRIPTION
 
@@ -57,19 +57,19 @@ version
 
 =item Id
 
- $Id: Developer.pm 329 2008-02-18 13:13:53Z ac0v $
+ $Id: Developer.pm 333 2008-02-18 22:59:27Z ac0v $
 
 =item Revision
 
- $Revision: 329 $
+ $Revision: 333 $
 
 =item Date
 
- $Date: 2008-02-18 14:13:53 +0100 (Mo, 18 Feb 2008) $
+ $Date: 2008-02-18 23:59:27 +0100 (Mon, 18 Feb 2008) $
 
 =item HeadURL
 
- $HeadURL: http://svn.hyper-framework.org/Hyper/Hyper-Developer/branches/0.06/lib/Hyper/Developer.pm $
+ $HeadURL: http://svn.hyper-framework.org/Hyper/Hyper-Developer/branches/0.07/lib/Hyper/Developer.pm $
 
 =back
 

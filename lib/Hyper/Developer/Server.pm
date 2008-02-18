@@ -11,6 +11,7 @@ use Hyper::Singleton::Context;
 use Hyper::Template::HTC;
 use Hyper::Developer::Model::Viewer;
 use Hyper::Request::Default;
+use Module::Refresh;
 
 use Readonly;
 Readonly my $PACKAGE => __PACKAGE__;
@@ -27,6 +28,7 @@ sub new {
 
     $self->{$PACKAGE} = {
         base_path => dirname((caller)[1]) . '/../../',
+        refresh   => Module::Refresh->new(),
         %{$config}
     };
 
@@ -36,6 +38,10 @@ sub new {
 sub handler {
     my $self = shift;
     my $cgi  = CGI->new();
+
+    { no warnings qw(redefine);
+      $self->{$PACKAGE}->{refresh}->refresh();
+    }
 
     # use server's cgi as cgi singleton
     { no warnings qw(redefine);
